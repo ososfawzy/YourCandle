@@ -1,6 +1,11 @@
 # YourCandle
 YourCandle is a Mobile Application that designed to help blind and low-vision people The app harnesses the power of generosity, technology and human connection to help blind and visually impaired individuals lead more independent lives.<br/>
 
+<img src="https://user-images.githubusercontent.com/38099832/55696301-a6487180-59bc-11e9-9596-5a57bc907f2b.png" width="600" height="500">
+
+# Project Documentation
+[Documentation2.pdf](https://github.com/ososfawzy/YourCandle/files/3052473/Documentation2.pdf)
+
 # Problem Statement
 The growth of blinds people in society leads to the need of technological solutions to help them in their daily life, this encouraged us to create a solution that will be a guidance for Blinds people by voice functionalities.
 
@@ -22,7 +27,6 @@ User who has logged in to the application, can show his profile page and edit hi
 •	Capture a photo and know what’s included.<br/>
 •	Voice recording and the ability of sharing those records.<br/>
 •	Video calling to communicate with each other and share their feelings.
-
 
 # References
 1- Capture Photo API :-<br/>
