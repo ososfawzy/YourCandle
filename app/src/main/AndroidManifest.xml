@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.yourcandle.yourcandle">
+
+    <permission
+        android:name="${applicationId}.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="${applicationId}.permission.C2D_MESSAGE" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.BLUETOOTH"></uses-permission>
+
+    <application
+        android:name="android.support.multidex.MultiDexApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/candle_icon"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/candle_icon"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="android:icon,android:allowBackup">
+        <activity android:name=".Activities.Home.HomeActivity" />
+        <activity android:name=".WelcomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Activities.Login.LoginActivity"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity
+            android:name=".Activities.Register.RegisterActivity"
+            android:windowSoftInputMode="stateHidden|adjustResize" />
+        <activity android:name=".Activities.ForgetPassword.ForgetPasswordActivity" />
+        <activity android:name=".Activities.Admin.AdminHomeActivity" />
+        <activity android:name=".Activities.Home.ListenToFile.AndroidMediaPlayer" />
+        <activity android:name=".Activities.Home.CapturePhoto.Main3Activity" />
+        <activity android:name=".Activities.Home.VoiceRecord.Main4Activity" />
+        <activity android:name=".Activities.Home.CapturePhoto.ResultsActivity" />
+        <activity android:name=".Activities.Home.VoiceRecord.RecordingListActivity" />
+        <activity android:name=".Activities.Home.ListenToFile.TextToSpeechActivity" />
+        <activity android:name=".Activities.Home.ListenToFile.Main2Activity" />
+
+        <receiver android:name=".Utilities.Network">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name=".Activities.Home.SocialNetwork.Main1Activity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.Home.SocialNetwork.OutgoingCallActivity"
+            android:excludeFromRecents="true"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="ACTION_STRING_FINISH" />
+            </intent-filter>
+            >
+        </activity>
+        <activity
+            android:name=".Activities.Home.SocialNetwork.IncomingCallActivity"
+            android:excludeFromRecents="true"
+            android:screenOrientation="portrait" />
+
+        <receiver
+            android:name=".Activities.Home.SocialNetwork.CallEventsBroadcastReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.threebytes.wrtc.intent.CALL_EVENTS" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name=".Activities.Home.SocialNetwork.CallEventsIntentService"
+            android:exported="false" />
+
+        <activity android:name=".Activities.Home.VideoCall.openvcall.ui.Main5Activity"
+                  android:configChanges="orientation|keyboardHidden|screenSize"/>
+        <activity android:name=".Activities.Home.VideoCall.openvcall.ui.ChatActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:parentActivityName=".Activities.Home.VideoCall.openvcall.ui.Main5Activity"
+            android:theme="@style/FullscreenTheme"/>
+        <activity android:name=".Activities.Home.VideoCall.openvcall.ui.SettingsActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/label_settings"></activity>
+    </application>
+
+</manifest>
